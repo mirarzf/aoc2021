@@ -114,7 +114,6 @@ class SubPos2 : public SubPos {
 int puzzle(string filename, SubPos& pos) { 
     ifstream file; 
     file.open(filename); 
-    // pos = (puzzlepart==1) ? SubPos() : SubPos2(); 
 
     if (file.is_open()) { 
         while (file.good()) { 

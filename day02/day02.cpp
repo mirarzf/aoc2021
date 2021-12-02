@@ -57,7 +57,7 @@ class SubPos {
         }
 
         // Other Class Methods 
-        void forward(SubCommand commande) { 
+        virtual void forward(SubCommand commande) { 
             string instr = commande.getInstr(); 
             int unit = commande.getUnit(); 
             if (instr =="forward"){ 
@@ -92,7 +92,7 @@ class SubPos2 : public SubPos {
         }
 
         // Other Class Methods 
-        void forward(SubCommand commande) { 
+        void forward(SubCommand commande) override { 
             string instr = commande.getInstr(); 
             int unit = commande.getUnit(); 
             if (instr =="forward"){ 
@@ -111,27 +111,10 @@ class SubPos2 : public SubPos {
         }
 }; 
 
-int puzzle1(string filename) { 
+int puzzle(string filename, SubPos& pos) { 
     ifstream file; 
     file.open(filename); 
-    SubPos pos = SubPos(); 
-
-    if (file.is_open()) { 
-        while (file.good()) { 
-            string line; 
-            getline(file, line); 
-            SubCommand commande = SubCommand(line); 
-            pos.forward(commande); 
-        }
-    }
-    file.close(); 
-    return pos.getDepth()*pos.getHorizontal(); 
-}
-
-int puzzle2(string filename) { 
-    ifstream file; 
-    file.open(filename); 
-    SubPos2 pos = SubPos2(); 
+    // pos = (puzzlepart==1) ? SubPos() : SubPos2(); 
 
     if (file.is_open()) { 
         while (file.good()) { 
@@ -151,8 +134,13 @@ int main() {
     cout << "Filename of the input: "; 
     cin >> myfilename; 
 
-    cout << "The solution to part one is " << puzzle1(myfilename) << ". \n"; 
-    cout << "The solution to part two is " << puzzle2(myfilename) << ". \n"; 
+    // Solution to puzzle 1 
+    SubPos pos = SubPos(); 
+    cout << "The solution to part one is " << puzzle(myfilename, pos) << ". \n"; 
+
+    // Solution to puzzle 2 
+    SubPos2 pos2 = SubPos2(); 
+    cout << "The solution to part two is " << puzzle(myfilename, pos2) << ". \n"; 
 
     return 0; 
 }

@@ -138,8 +138,9 @@ int main() {
     cout << "Filename of the input: "; 
     cin >> myfilename; 
 
-    cout << "The solution to part one is " << puzzle(myfilename, 1) << ". \n"; // Expected solution: 2035764
-    cout << "The solution to part two is " << puzzle(myfilename, 2) << ". \n"; // Expected solution: 2817661
-
+    // Solution to puzzle 1: 2035764
+    cout << "The solution to part one is " << puzzle(myfilename, 1) << ". \n"; 
+    // Solution to puzzle 2: 2817661
+    cout << "The solution to part two is " << puzzle(myfilename, 2) << ". \n"; 
     return 0; 
 }

@@ -76,7 +76,9 @@ int main() {
   cout << "Filename of the input: "; 
   cin >> myfilename; 
 
+  // Solution to puzzle 1: 1665 
   cout << "The solution to part one is " << puzzle1(myfilename) << ". \n"; 
+  // Solution to puzzle 2: 1702 
   cout << "The solution to part two is " << puzzle2(myfilename, 3) << ". \n"; 
 
   return 0; 

@@ -133,11 +133,11 @@ int main() {
     cout << "Filename of the input: "; 
     cin >> myfilename; 
 
-    // Solution to puzzle 1 
+    // Solution to puzzle 1: 2117664 
     SubPos pos = SubPos(); 
     cout << "The solution to part one is " << puzzle(myfilename, pos) << ". \n"; 
 
-    // Solution to puzzle 2 
+    // Solution to puzzle 2: 2073416724 
     SubPos2 pos2 = SubPos2(); 
     cout << "The solution to part two is " << puzzle(myfilename, pos2) << ". \n"; 
 

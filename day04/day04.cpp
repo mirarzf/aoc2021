@@ -266,6 +266,8 @@ int puzzle(string filename, int puzzlepart = 1) {
 
     } 
 
+    file.close(); 
+
     int nbOfCards = board.getNbOfBoards(); 
     int nbDeNbTires = tirage.getLenTirage(); 
 

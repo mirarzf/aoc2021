@@ -6,3 +6,6 @@
 
 # Ignore all executables 
 *.exe 
+
+# Ignore my template file for the main program for each day puzzles 
+templateday.cpp

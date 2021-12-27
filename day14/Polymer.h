@@ -8,8 +8,8 @@
 class Polymer {
     private: 
     std::string polymer; 
-    std::map<std::string, char> rules; 
-    std::map<char, unsigned long long int> countIter; 
+    std::map<std::string, std::vector<std::string>> rules; 
+    std::map<std::string, unsigned long long int> frequenciesPair; 
     
     public: 
     // Constructors 
@@ -17,13 +17,14 @@ class Polymer {
 
     // Getters and setters 
     std::string getPolymerChain(); 
-    std::map<std::string, char> getRules(); 
+    std::map<std::string, std::vector<std::string>> getRules(); 
+    std::vector<std::string> getPolymerizedPair(std::string unpolymerized); 
     void setPolymerChain(std::string polymerchain); 
     void addRule(std::string rule); 
 
     // Other methods 
-    void Polymerize(std::string inputpaire, int nbiter); 
-    unsigned long long int countIterations(int nbIter); 
+    void Polymerize(); 
+    unsigned long long int countIterations(); 
 
 }; 
 
